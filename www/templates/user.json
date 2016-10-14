@@ -1,0 +1,36 @@
+[
+	{
+		"user_id": "1",
+		"username": "liduanjie",
+		"password": "123",
+		"note": "100",
+		"follower": "100",
+		"following": "1000",
+		"avatar": "http://placehold.it/100x100?text=dafasd",
+		"new": "12",
+		"message": "2",
+		"forum": "10",
+		"stars": "4"
+	},
+	{
+		"user_id": "2",
+		"username": "testing",
+		"password": "testing",
+		"note": "100",
+		"follower": "100",
+		"following": "1000",
+		"avatar": "http://placehold.it/100x100?text=testing",
+		"new": " ",
+		"message": "",
+		"forum": ""
+	},
+	{
+		"user_id": "3",
+		"username": "lidsduanjie",
+		"password": "1d23",
+		"note": "100",
+		"follower": "100",
+		"following": "1000",
+		"avatar": "http://placehold.it/200x200?test=dafasd"
+	}
+]

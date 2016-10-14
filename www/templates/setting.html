@@ -1,0 +1,68 @@
+<<ion-view view-title="设置">
+  <ion-content>
+  	<div>
+  	  <ion-item class="item-divider">会员与登陆</ion-item>
+  	  <a class="item" href="" ng-click="login()">登陆</a>
+  	  <a href="" class="item" ng-click="showLoading()">免费订阅</a>
+  	  <ion-item class="item-divider">功能设置</ion-item>
+  	  <a href="" class="item">清除缓存</a>
+  	  <ion-item  class="item-toggle item">
+  	  文章使用较大好字体
+  	  	<label class="toggle">
+	  		<input type="checkbox" name="sf">
+	  		<div class="track">
+	  			<div class="handle"></div>
+	  		</div>
+  		</label>
+  	  </ion-item>	
+  	  <ion-item class="item item-toggle">
+  	  	首页焦点图自动轮播
+  	  	<label class="toggle">
+  	  		<input class="checkbox" name="auto">
+  	  		<div class="track">
+  	  			<div class="handle"></div>
+  	  		</div>
+  	  	</label>
+  	  </ion-item>
+  	  <ion-item class="item-divider"></ion-item>
+  	  <a class="item" ng-click="showRecommand()">特别推荐</a>
+  	</div>
+  	<div class="padding item-divider item" style="text-align:center;">Power By Liduanjie 2016</div>
+  </ion-content>
+</ion-view>
+
+
+<script type="text/ng-template" id="recommand.html">
+<ion-view view-title="Title">
+  <ion-header-bar align-title="center" class="bar-stable"> 
+    <h1 class="title">this is recommand</h1>
+    <div class="buttons">
+      <button class="button button-clear ion-ios-close-empty icon" ng-click="hideRecommand()"></button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="row">
+      <div class="col-33 col">
+        <img src="http://placehold.it/200x200" class="full-image">
+      </div> 
+      <div class="col-33 col">
+        <img src="http://placehold.it/200x200" class="full-image">
+      </div> 
+      <div class="col-33 col">
+        <img src="http://placehold.it/200x200" class="full-image">
+      </div>  
+    </div>
+    <div class="row">
+      <div class="col-33 col">
+        <img src="http://placehold.it/200x200" class="full-image">
+      </div> 
+      <div class="col-33 col">
+        <img src="http://placehold.it/200x200" class="full-image">
+      </div> 
+      <div class="col-33 col">
+        <img src="http://placehold.it/200x200" class="full-image">
+      </div>  
+    </div>
+  </ion-content>
+</ion-view>
+</script>

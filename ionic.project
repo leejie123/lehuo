@@ -1,0 +1,11 @@
+{
+  "name": "lehuo",
+  "app_id": "4deff1f5",
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "11.40.277.7"
+    }
+  ]
+}

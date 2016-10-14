@@ -1,0 +1,138 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button class="button-clear">
+          <!-- <i class="icon ion-ios-arrow-thin-back"> </i> -->
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+
+      <ion-nav-buttons side="right">
+        <a class="button button-icon button-clear ion-ios-book-outline" ng-href="#/app/myMagazine/all"></a>
+        <button class="button button-icon button-clear ion-ios-navigate-outline" menu-toggle="right"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="right">
+    <ion-content>
+      <div style="text-align:center;padding:30px 0;">
+        <img src="{{ user.avatar || userDefault.avatar }}" style="border-radius:50%;"><br/>
+        <p class="padding" style="text-align:center;" ng-if="isLogin">{{user.username}}</p>
+        <button class="button button-small button-assertive" ng-if="!isLogin" ng-click="login()">登陆社区</button>
+        <div class="" ng-if="isLogin">  
+            <div class="button button-icon ion-star assertive"></div> 
+            <div class="button button-icon ion-star assertive"></div> 
+            <div class="button button-icon ion-star assertive"></div> 
+        </div>  
+        <div class="row">
+          <div class="col-33" ui-sref="app.collection" menu-close>
+            <div>{{user.note || userDefault.note}}</div>
+            <div>笔记</div>
+          </div>
+          <div class="col-33" menu-close ng-click="showFollowing('following')">
+            <div>{{user.follower || userDefault.follower}}</div>
+            <div>关注</div>
+          </div>
+          <div class="col-33" menu-close ng-click="showFollowing('follower')">
+            <div>{{user.following || userDefault.following}}</div>
+            <div>关注着</div>
+          </div>
+        </div>
+      </div>
+      <ion-list>
+        <ion-item class="item item-icon-left" menu-close href="#/app/home" ng-click="login()">
+          <i class="icon ion-ios-person-outline"></i> 我的首页
+        </ion-item>
+        <ion-item class="item item-icon-left" menu-close href="#/app/square">
+          <i class="icon ion-ios-paper-outline"></i> 浏览发现 <span class="badge badge-dark">{{user.new}}</span>
+        </ion-item>
+        <ion-item class="item item-icon-left" menu-close href="">
+          <i class="icon ion-ios-email-outline"></i> 通知中心 <span class="badge badge-dark" ng-show="isLogin">{{user.message}}</span>
+        </ion-item>
+        <ion-item class="item item-icon-left" menu-close href="#/app/community">
+          <i class="icon ion-ios-chatboxes-outline"></i> 社区 <span class="badge badge-dark" ng-show="isLogin">{{user.forum}}</span>
+        </ion-item>
+        <ion-item class="item item-icon-left" menu-close href="#/app/collection">
+          <i class="icon ion-ios-star-outline"></i> 收藏夹
+        </ion-item>
+        <ion-item class="item item-icon-left" menu-close href="#/app/setting">
+          <i class="icon ion-ios-gear-outline"></i> 设置
+        </ion-item>
+        <ion-item class="item item-icon-left" href="" menu-close ng-click="doLogout()">
+          <i class="icon ion-power"></i> 退出登陆
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+  <ion-side-menu side="left">
+    <!-- <ion-header-bar class=""> -->
+      <!-- <h1 class="title">Left</h1> -->
+    <!-- </ion-header-bar> -->
+    <ion-content>
+        <img src="http://placehold.it/200x200" style="margin:0 auto;width:100%;height:100px;">
+      <ion-list>
+       <!--  <ion-item class="item-icon-right" menu-close>
+          Login <i class="icon ion-chevron-right" style="font-size:16px;"></i>
+        </ion-item>
+        <ion-item menu-close href="#/app/search">
+          Search
+        </ion-item>
+        <ion-item menu-close href="#/app/browse">
+          Browse
+        </ion-item>
+        <ion-item menu-close href="#/app/playlists">
+          Playlists
+        </ion-item> -->
+        <ion-item class="item-icon-right" href="#/app/topice/recommand" menu-close>
+          每日推荐 <i class="icon ion-chevron-right" style="font-size:16px;"></i>
+        </ion-item>
+        <ion-item class="item-icon-right" href="#/app/topice/season" menu-close>
+          节气令 <i class="icon ion-chevron-right" style="font-size:16px;"></i>
+        </ion-item>
+        <ion-item class="item-icon-right" href="#/app/topice/video" menu-close>
+          好看视频 <i class="icon ion-chevron-right" style="font-size:16px;"></i>
+        </ion-item>
+        <ion-item class="item-icon-right" href="#/app/topice/mine" menu-close>
+          我的杂志 <i class="icon ion-chevron-right" style="font-size:16px;"></i>
+        </ion-item>
+        <ion-item class="item-icon-right" href="#/app/topice/time-stolen" menu-close  >
+          日子店 <i class="icon ion-chevron-right" style="font-size:16px;"></i>
+        </ion-item>
+        <ion-item class="item-icon-right" ng-href="#/app/aboutus" menu-close>
+          关于我们 <i class="icon ion-chevron-right" style="font-size:16px;"></i>
+        </ion-item>
+        <ion-item class="item-icon-right" ng-href="#/app/appStory" menu-close>
+           APP的故事 <i class="icon ion-chevron-right" style="font-size:16px;"></i>
+        </ion-item>
+      </ion-list>
+      <div class="button-bar padding-top item-divider">
+        <a class="tab-item">
+          <i class="icon ion-social-facebook"></i> 
+          FACEBOOK
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-social-twitter"></i>
+          TWITTER
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-social-googleplus"></i>
+          GOOGLE
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-social-instagram"></i>
+          INSTAGRAM
+        </a>
+      </div>
+      <div class="padding item" style="text-align:center;">
+        <small>power by Liduanjie</small>
+      </div>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
+ 

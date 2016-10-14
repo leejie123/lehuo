@@ -1,0 +1,57 @@
+<ion-view view-title="MagazineInner">
+  <ion-content class="has-header has-footer">
+  	<!-- <<ion-scroll direction="x" style="width:500px; height:500px"> -->
+  	
+  	  <!-- <div style="width: 5000px; height: 5000px; background: url('5000') repeat"> -->
+  	  	<ion-slide-box on-slide-changed="slideHasChanged($index)" delegate-handle="duanjie" style="width:100%;">
+  	  	  <ion-slide style="padding:10px;" ng-click="next()" ng-repeat="item in catalog">
+  	  	  	<show-content template="{{item.page}}"></show-content>
+  	  	  </ion-slide> 
+  	  	</ion-slide-box>
+  	  <!-- </div> -->
+  	
+  	<!-- </ion-scroll> -->
+  	
+  </ion-content>
+  <!-- <div style="position:fixed;bottom:70px;left:50%;width:20px;height:20px;line-height:23px;text-align:center;background:rgba(0,0,0,.5);border-radius:100%;" ng-click="isShowFooterbar = !isShowFooterbar"><i class="icon ion-chevron-down"></i></div> -->
+  <div class="bar bar-footer" ng-show="isShowFooterbar" ng-init="isShowFooterbar = true">
+  	<div class="row">
+  		<div class="col-20">
+  			<button class="button button-icon ion-ios-arrow-thin-left" ng-click="$ionicGoBack()"></button>
+  		</div>
+  		<div class="col-20">
+  			<button class="button button-icon ion-ios-chatbubble-outline" ng-click="magazineComment()"></button>
+  		</div>
+  		<div class="col-20">
+  			<button class="button button-icon ion-ios-heart-outline" ng-click="like()"></button>
+  		</div>
+  		<div class="col-20">
+  			<button class="button button-icon ion-share" ng-click="detailShare()"></button>
+  		</div>
+  		<div class="col-20">
+  			<button class="button button-icon ion-ios-list-outline" ng-click="magazineCatalog()"></button>
+  		</div>
+  	</div>
+  </div>
+</ion-view>
+
+<script type="text/ng-template" id="magazineCatalog.html">
+	<ion-modal-view>
+		<ion-header-bar align-title="center" class="bar-stable">
+		  <div class="buttons button-bar">
+        <button class="button" ng-click="nextMag($scope)">下一本</button>
+		    <button class="button" ng-click="prevMag()">上一本</button>
+		  </div>
+		  <h1 class="title">目录</h1>
+		  <div class="buttons">
+		    <button class="button button-icon ion-minus-circled" ng-click="closeMagazineCatalog()"></button>
+		  </div>
+		</ion-header-bar>
+		<ion-content>
+			<ion-list>
+				<ion-item ng-repeat="item in catalog" ng-href="{{item.link}}" ng-click="closeMagazineCatalog()"> <img src="http://placehold.it/200x200" style="height:30px;width:60px; vertical-align:middle"> {{item.title}}</ion-item>
+			</ion-list>
+		</ion-content>
+	</ion-modal-view>
+</script>
+

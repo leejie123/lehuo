@@ -1,0 +1,52 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-stable" side="right">
+    <h1 class="title">请登录</h1>
+    <div class="buttons" side='right'>
+      <button class="button button-clear button-icon ion-ios-close-empty" ng-click="closeLogin()"></button>
+    </div>
+  </ion-header-bar>
+  <!-- <<ion-nav-buttons side="right">
+    <button class="button button-clear button-stable icon-right ion-home"></button>
+  </ion-nav-buttons> -->
+
+  <ion-content>
+    <ion-scroll style=" height:500px" direction="y"  delegate-handle="small">
+     
+    
+      <div class="item item-divider">  
+          <small>您可以用社交账号登陆</small>
+      </div>
+      <div class="padding-left padding-right">
+        <button class="button button-small button-assertive ion-earth icon-left button-block">用微博账号登陆</button>
+        <button class="button button-small button-positive ion-earth icon-left button-block">用QQ账号登陆</button>
+      </div>
+
+      <form ng-submit="doLogin()">
+        <div class="list">
+          <div class="item item-divider"><i class="icon ion-share"></i>
+            <small>请用您的用户账号登陆</small>
+          </div>
+          <label class="item item-input item-icon-right">
+            <span class="input-label">Username</span>
+            <input type="text" ng-model="loginData.username" ng-click="">
+              <button class="icon ion-ios-close-empty button-small button" ng-click="closeLogin()"></button>
+          </label>
+          <label class="item item-input item-icon-right">
+            <span class="input-label">Password</span>
+            <input type="password" ng-model="loginData.password">
+            <i class="icon button button-small ion-ios-help-outline positive"></i>
+          </label>
+          <label class="item button-bar">
+            <!-- <button class="button button-small button-stable">注册</button> -->
+            <button class="button button-small button-assertive" type="submit">登陆</button>
+            <!-- <button class="button button-block button-positive" type="submit">Log in</button> -->
+          </label>
+        </div>
+        <div class="item item-divider">  
+            注册即代表您已同意用户协议<br/><br/><br/><br/>
+        </div>
+      </form>
+
+    </ion-scroll>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,75 @@
+<ion-view view-title="collection" hide-back-button="">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios-minus-outline" ng-click="data.showDelete=!data.showDelete;data.showRecord=false">
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button" ng-click="data.showDelete=false;data.showRecord=!data.showRecord">
+    Record
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+  	<ion-list  
+          show-delete="data.showDelete"
+          show-reorder="data.showRecord"
+          can-swipe="true">
+	 	<ion-item ng-repeat="item in xx"
+	            class="item-thumbnail-left"
+	            class="item-remove-animate"
+	            ng-href="{{item.link}}"
+	            item="item">
+		    <img ng-src="{{item.img}}">
+		    <h2>{{item.title}}</h2>
+		    <p>{{item.description}}</p>
+		    <p>{{item.time}}</p>
+		    <ion-option-button class="button-dark"
+		                       ng-click="share(item)">
+		      分享
+		    </ion-option-button>
+		    <ion-option-button class="button-info"
+		                       ng-click="edit(item.id)">
+		      编辑
+		    </ion-option-button>
+		    <ion-delete-button class="ion-minus-circled"
+		                       ng-click="onItemDelete($index)">
+		    </ion-delete-button>
+		    <ion-reorder-button class="ion-navicon"
+		                        on-reorder="reorderItem(item, $fromIndex, $toIndex)">
+		    </ion-reorder-button>
+
+	  	</ion-item>
+	</ion-list>
+  </ion-content>
+</ion-view>
+
+<script type="text/ng-template" id="edit.html">
+<ion-modal-view>
+	<ion-header-bar align-title="left" class="bar-satable">
+	  <div class="buttons">
+	    <button class="button" ng-click="doSomething()">Left Button</button>
+	  </div>
+	  <h1 class="title">collection</h1>
+	  <div class="buttons">
+	    <button class="button  button-icon icon ion-minus-circled" ng-click="closeEditModal()"></button>
+	  </div>
+	</ion-header-bar>
+	<ion-content>
+		<form ng-submit="editData()">
+			<ion-list>
+				<ion-item class="item item-input">
+					<!-- <span class="input-label">title</span> -->
+					<input type="text" placeholder="TITLE" ng-model="editCollection.title">
+					<span ng-show="edit.title.$valid">请输入数字</span>
+				</ion-item>
+				<ion-item class="item item-input">
+					<input type="text" placeholder="DESCRIPTION" ng-model="editCollection.description">
+				</ion-item> 
+			</ion-list>
+			<div class="item padding">
+				<button class="button button-dark button-block button-small" type="submit"	>submit</button>
+			</div>
+		</form>
+	</ion-content> 
+	</div>
+</ion-modal-view>
+</script>

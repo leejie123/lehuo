@@ -1,0 +1,34 @@
+[
+	{
+		"avatar": "http://placehold.it/100x200?test=dfasfd",
+		"name": "人类的未来",
+		"time": "2015-11-10",
+		"content": "根据研究发现，人类在不断追求利益的时候，放弃了对梦想的追求，这种做法非常短视，有可能导致人类灭亡。",
+		"liked": "12",
+		"common": "2" 
+	},
+	{
+		"avatar": "http://placehold.it/100x200?test=dfasfd",
+		"name": "关于兴趣",
+		"time": "2015-11-10",
+		"content": "有灵性才能有玩味。比如演艺，如果表演没有灵性，就会十分乏味。",
+		"liked": "12",
+		"common": "2" 
+	},
+	{
+		"avatar": "http://placehold.it/100x200?test=dfasfd",
+		"name": "潜能是不是无限的",
+		"time": "2015-11-10",
+		"content": "当然了，潜能是能够通过锻炼而得来的。",
+		"liked": "12",
+		"common": "2" 
+	},
+	{
+		"avatar": "http://placehold.it/100x200?test=dfasfd",
+		"name": "人的自我感知",
+		"time": "2015-11-10",
+		"content": "人在静修的时候真的可以找到自我感知以至于成功吗？",
+		"liked": "12",
+		"common": "2" 
+	}
+]
